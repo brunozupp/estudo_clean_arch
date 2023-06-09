@@ -1,5 +1,5 @@
 import 'package:estudo_clean_arch/layers/domain/entities/carro_entity.dart';
-import 'package:estudo_clean_arch/layers/domain/entities/usecases/get_carros_por_cor/get_carros_por_cor_usecase.dart';
+import 'package:estudo_clean_arch/layers/domain/usecases/get_carros_por_cor/get_carros_por_cor_usecase.dart';
 
 class GetCarrosPorCorUsecaseImp implements GetCarrosPorCorUsecase {
   

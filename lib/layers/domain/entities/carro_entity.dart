@@ -13,4 +13,10 @@ class CarroEntity {
   // Tudo que depende dela mesmo, posso ter dentro da entidade
 
   double get valorReal => valor * qtdPortas;
+  
+  void setLogica() {
+    if(valorReal > 10000.00) {
+      valor *= 2;
+    }
+  }
 }

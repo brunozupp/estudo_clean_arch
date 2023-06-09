@@ -1,5 +1,5 @@
 import 'package:estudo_clean_arch/layers/domain/entities/carro_entity.dart';
-import 'package:estudo_clean_arch/layers/domain/entities/usecases/salvar_carro_favorito/salvar_carro_favorito_usecase.dart';
+import 'package:estudo_clean_arch/layers/domain/usecases/salvar_carro_favorito/salvar_carro_favorito_usecase.dart';
 import 'package:estudo_clean_arch/layers/domain/repositories/salvar_carro_favorito_repository.dart';
 
 class SalvarCarroFavoritoUsecaseImp implements SalvarCarroFavoritoUsecase {

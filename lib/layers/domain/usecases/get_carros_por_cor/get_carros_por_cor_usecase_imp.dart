@@ -1,23 +1,18 @@
 import 'package:estudo_clean_arch/layers/domain/entities/carro_entity.dart';
+import 'package:estudo_clean_arch/layers/domain/repositories/get_carros_por_cor_repository.dart';
 import 'package:estudo_clean_arch/layers/domain/usecases/get_carros_por_cor/get_carros_por_cor_usecase.dart';
 
 class GetCarrosPorCorUsecaseImp implements GetCarrosPorCorUsecase {
+
+  final GetCarrosPorCorRepository _getCarrosPorCorRepository;
+
+  GetCarrosPorCorUsecaseImp({
+    required GetCarrosPorCorRepository getCarrosPorCorRepository,
+  }) : _getCarrosPorCorRepository = getCarrosPorCorRepository;
   
   @override
   CarroEntity call(String cor) {
-    if(cor == "vermelho") {
-      return CarroEntity(
-        placa: "abc123",
-        qtdPortas: 4,
-        valor: 50000,
-      );
-    }
-
-    return CarroEntity(
-      placa: "QWE",
-      qtdPortas: 2,
-      valor: 20000,
-    );
+    return _getCarrosPorCorRepository.call(cor);
   }
   
 }

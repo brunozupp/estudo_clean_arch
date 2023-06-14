@@ -17,7 +17,10 @@ void main() {
 
     final result = usecase("azul");
 
-    expect(result, isInstanceOf<CarroEntity>());
+    result.fold(
+      (l) => expect(l, isException), 
+      (carro) => expect(carro, isInstanceOf<CarroEntity>())
+    );
   });
 
   test("Deve retornar um carro de 4 portas quando a cor for vermelho", () {
@@ -30,7 +33,10 @@ void main() {
 
     final result = usecase("vermelho");
 
-    expect(result.qtdPortas, 4);
+    result.fold(
+      (l) => expect(l, isException), 
+      (carro) => expect(carro.qtdPortas, 4)
+    );
   });
 
   test("Deve retornar um carro de 2 portas quando qualquer cor exceto vermelho", () {
@@ -43,6 +49,9 @@ void main() {
 
     final result = usecase("verde");
 
-    expect(result.qtdPortas, 2);
+      result.fold(
+      (l) => expect(l, isException), 
+      (carro) => expect(carro.qtdPortas, 2)
+    );
   });
 }

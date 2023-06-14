@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:estudo_clean_arch/layers/domain/entities/carro_entity.dart';
 import 'package:estudo_clean_arch/layers/domain/usecases/salvar_carro_favorito/salvar_carro_favorito_usecase.dart';
 import 'package:estudo_clean_arch/layers/domain/repositories/salvar_carro_favorito_repository.dart';
@@ -11,7 +12,7 @@ class SalvarCarroFavoritoUsecaseImp implements SalvarCarroFavoritoUsecase {
   }) : _salvarCarroFavoritoRepository = salvarCarroFavoritoRepository;
 
   @override
-  Future<bool> call(CarroEntity carroEntity) async {
+  Future<Either<Exception,bool>> call(CarroEntity carroEntity) async {
 
     // Dentro de um Usecase, posso chamar outros Usecase
     // Posso ter validações em cima das Entities

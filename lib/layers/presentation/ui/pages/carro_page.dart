@@ -28,7 +28,7 @@ class _CarroPageState extends State<CarroPage> {
         padding: const EdgeInsets.all(24),
         child: Center(
           child: Text(
-            widget._controller.carro.placa,
+            widget._controller.carro?.placa ?? "Sem placa",
           ),
         ),
       ),

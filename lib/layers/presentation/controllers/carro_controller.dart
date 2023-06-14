@@ -21,6 +21,6 @@ class CarroController {
   }
 
   Future<void> salvarCarroFavorito(CarroEntity carro) async {
-    final salvou = await _salvarCarroFavoritoUsecase(carro);
+    await _salvarCarroFavoritoUsecase(carro);
   }
 }
